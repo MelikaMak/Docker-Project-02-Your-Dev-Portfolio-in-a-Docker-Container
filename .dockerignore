@@ -1,0 +1,19 @@
+# Files Docker should NOT send to "docker build".
+# Works like .gitignore, but for Docker.
+
+# Packages are installed INSIDE the image with "npm ci".
+# Your own node_modules may be for another operating system (like Windows),
+# and it is big, so it would slow down every build.
+node_modules
+
+# Build output is made INSIDE the image too.
+dist
+
+# Not needed to build or run the site.
+.git
+.gitignore
+.dockerignore
+Dockerfile
+compose.yaml
+README.md
+*.log

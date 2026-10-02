@@ -1,0 +1,76 @@
+:root {
+  --text: #1f2328;
+  --muted: #59636e;
+  --background: #ffffff;
+  --card: #f6f8fa;
+  --accent: #0969da;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--background);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #e6edf3;
+    --muted: #9198a1;
+    --background: #0d1117;
+    --card: #161b22;
+    --accent: #4493f8;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.role {
+  margin-top: 0.25rem;
+  color: var(--muted);
+  font-size: 1.2rem;
+}
+
+h2 {
+  margin-top: 2.5rem;
+  border-bottom: 1px solid var(--card);
+}
+
+a {
+  color: var(--accent);
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.skills li {
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  background: var(--card);
+}
+
+.project {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: var(--card);
+}
+
+.project h3 {
+  margin: 0;
+}

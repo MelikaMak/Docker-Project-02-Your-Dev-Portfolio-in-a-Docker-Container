@@ -1,0 +1,27 @@
+# Two ways to run the portfolio:
+#   docker compose up dev    -> development, with hot reload, on http://localhost:5173
+#   docker compose up prod   -> production build with Nginx, on http://localhost:8080
+#   docker compose up        -> both at the same time
+
+# Short project name, so images are called "portfolio-dev" and "portfolio-prod".
+name: portfolio
+
+services:
+  dev:
+    build:
+      context: .
+      target: dev            # stop at the "dev" stage of the Dockerfile
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app               # your code, live, so changes show up right away
+      - /app/node_modules    # keep the container's own node_modules (see README)
+    environment:
+      - WATCH_POLLING=true   # notice file changes on Windows and Mac too
+
+  prod:
+    build:
+      context: .
+      target: prod           # the small, final Nginx image
+    ports:
+      - "8080:80"
