@@ -220,6 +220,8 @@ docker build -t my-portfolio .
 ```
 
 In the output, the `npm ci` step says **`CACHED`**. Only the steps after `COPY . .` run again. The build is much faster.
+<img width="1087" height="560" alt="image" src="https://github.com/user-attachments/assets/be32342d-4f4c-4dfe-8365-66ddee2f6a47" />
+
 
 **Rule:** put things that change **rarely** at the top, and things that change **often** at the bottom.
 
